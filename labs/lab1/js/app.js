@@ -7,6 +7,7 @@ class Raindrop {
     this.speed = 1 + Math.random() * 20;
   }
 
+  //respawn the raindop after checking to see if it hit the ground
   update() {
     this.y = this.y + this.speed;
     fill(this.color);
@@ -14,6 +15,7 @@ class Raindrop {
     this.groundCheck();
   }
 
+  //raindop hits the ground at the top of the ground created
   groundCheck() {
     if (this.y >= 600) {
       this.y = 0;
@@ -37,6 +39,7 @@ class Ground {
     rect(this.x, this.y, this.width, this.length);
   }
 
+  //speed of the color change when raindrop hits the ground
   colorChange() {
     this.color[2] += 1;
   }
@@ -45,6 +48,7 @@ class Ground {
 let myRaindrops = [];
 let myGround = new Ground();
 
+//canvas containing the random raindrops
 function setup() {
   createCanvas(600, 600);
   for (let i = 0; i < 5; i++) {
@@ -57,6 +61,7 @@ function setup() {
   }
 }
 
+//calling all the function to create the raindrops and ground as well the respawn of the raindrops
 function draw() {
   background(235, 245, 245);
   noStroke();
