@@ -1,36 +1,40 @@
+//base class
 class Instrument {
   constructor(family, loudness, play) {
+    //properties of each of my instruments
     this.family = family;
     this.play = play;
     this.loudness = loudness;
   }
   playInstrument() {
+    //browser will list each instrument
     console.log(this.family, this.play + " at a " + this.loudness);
   }
 }
-
-class Drum extends Instrument {
+//concrete classes
+class Percussion extends Instrument {
   constructor(family, play, loudness) {
     super(family, play, loudness);
   }
 }
 
-class Guitar extends Instrument {
+class String extends Instrument {
   constructor(family, play, loudness) {
     super(family, play, loudness);
   }
 }
 
-class Saxophone extends Instrument {
+class Woodwind extends Instrument {
   constructor(family, play, loudness) {
     super(family, play, loudness);
   }
 }
 
-let myDrum = new Drum("Drum", "5", "beats");
-let myGuitar = new Guitar("Guitar", "7", "strums");
-let mySaxophone = new Saxophone("Saxophone", "10", "wails");
+//each instance of child classes
+let myPercussion = new Percussion("Drum", "6", "beats");
+let myString = new String("Guitar", "7", "strums");
+let myWoodwind = new Woodwind("Saxophone", "10", "wails");
 
-myDrum.playInstrument();
-myGuitar.playInstrument();
-mySaxophone.playInstrument();
+myPercussion.playInstrument();
+myString.playInstrument();
+myWoodwind.playInstrument();
