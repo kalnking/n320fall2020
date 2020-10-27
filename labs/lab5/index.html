@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Annimation Lab</title>
+  </head>
+  <style>
+    h2 {
+      margin-left: 30px;
+      font-size: 40px;
+      font-family: sans-serif;
+      color: darkblue;
+    }
+
+    #navBar {
+      background-color: darkblue;
+      width: 100%;
+      height: 120px;
+    }
+
+    .card {
+      background-color: purple;
+      width: 400px;
+      height: 200px;
+      margin: 10px;
+      animation-fill-mode: both;
+    }
+
+    .hoverOver {
+      animation: cardOverAnim 0.7s;
+      animation-fill-mode: both;
+    }
+
+    .hoverOut {
+      animation: cardOutAnim 0.7s;
+      animation-fill-mode: both;
+    }
+
+    #cardCanvas {
+      display: flex;
+      flex-flow: row wrap;
+      padding: 20px;
+      margin: auto;
+      margin-left: 40px;
+    }
+
+    @keyframes cardOverAnim {
+      to {
+        opacity: 1;
+        background-color: skyblue;
+        transform: scale(1.2);
+      }
+    }
+
+    @keyframes cardOutAnim {
+      from {
+        opacity: 1;
+        transform: scale(1.2);
+        background-color: skyblue;
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+        background-color: darkblue;
+      }
+    }
+  </style>
+  <body>
+    <h2>Title</h2>
+    <div id="navBar"></div>
+    <div id="cardCanvas"></div>
+    <script src="js/app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+  </body>
+</html>
