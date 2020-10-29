@@ -1,9 +1,13 @@
 let st1 = document.getElementsByClassName("st1");
+let player = 1;
 let turn = true;
-//console.log(st1);
-
-//let colorChange = st1.getAttribute("fill");
-//console.log(colorChange);
+let grid = [
+  [0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0, 0]
+];
 
 function colorChange(e) {
   if (turn != false) {
@@ -20,8 +24,11 @@ function colorChange(e) {
 for (var i = 0; i < st1.length; i++) {
   st1[i].addEventListener("click", colorChange);
 }
-//st1.addEventListener("click", trailCLick);
-//console.log("working");
-//function trailCLick(event) {
-// event.target.style.fill = "#ff0000";
-//}
+
+function columnCheck(col) {
+  if (this.y >= 600) {
+    this.y = 0;
+    this.x = 100 + Math.random() * 300;
+    myGround.colorChange();
+  }
+}
