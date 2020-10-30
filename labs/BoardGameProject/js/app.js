@@ -11,6 +11,8 @@ this.grid = [
   [0, 0, 0, 0, 0, 0, 0]
 ];
 
+//letting each st1 change color
+
 function colorChange(e) {
   console.log("click");
   if (turn != false) {
@@ -30,6 +32,8 @@ function colorChange(e) {
 for (var i = 0; i < st1.length; i++) {
   st1[i].addEventListener("click", colorChange);
 }
+
+//click to change each player color?
 
 class Checker {
   constructor(row, col) {
@@ -56,6 +60,8 @@ class Checker {
     }
   }
 }
+
+//trying to figure out how get the piece to start at the bottom of the grid
 
 class Game {
   constructor() {
