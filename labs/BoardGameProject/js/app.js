@@ -1,4 +1,7 @@
-let st1 = document.getElementsByClassName("st1");
+//Kalene Kingery//
+//Top portion of code currently provides the user with clicking on each circle to change color and take turns between two players//
+
+let st1 = document.querySelectorAll("circle");
 //let col = st1.getAttribute("data-col");
 //let row = st1.getAttribute("data-row");
 this.turn = true;
@@ -11,12 +14,12 @@ this.grid = [
   [0, 0, 0, 0, 0, 0, 0]
 ];
 
-//letting each st1 change color
+//letting each st1(circle) change color per players turn//
 
 function colorChange(e) {
   console.log("click");
   if (turn != false) {
-    3;
+    2;
     turn = false;
     event.target.style.fill = "#ff0000";
     // checkWin();
@@ -33,6 +36,7 @@ for (var i = 0; i < st1.length; i++) {
   st1[i].addEventListener("click", colorChange);
 }
 
+//The following code is incomplete. I attempted to move my code into each class. I would of included a class of Player as well. This code is not functional//
 //click to change each player color?
 
 class Checker {
