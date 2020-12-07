@@ -1,7 +1,7 @@
 Vue.component("frame-card", {
   props: ["frame", "isactive"],
   template:
-    "<div class='frame' v-bind:class='{fcardActive:isactive, fcardOut:!isactive}'><br> {{ frame.name }}<br> Icing: {{ frame.icing }}<br> Cake: {{ frame.cake}}<br> Price: {{ frame.price }}</div>"
+    "<div class='frame' v-bind:class='{fcardActive:isactive, fcardOut:!isactive}'><br> {{ frame.name }}"
 });
 
 var app = new Vue({
@@ -13,24 +13,24 @@ var app = new Vue({
         icing: "cream cheese",
         cake: "red velvet",
         price: "$10",
-        info: "TEST",
-        image: "images/cupcake3.png"
+        info: "TEST FOUR",
+        image: "images/cupcake4.png"
       },
       {
         name: "Birthday Cake Cupcake",
         icing: "vanilla",
         cake: "confetti",
         price: "$12",
-        info: "TEST.",
-        image: "images/cupcake4.png.png"
+        info: "TEST THREE",
+        image: "images/cupcake5.png"
       },
       {
-        name: "Chocolate Dream Cipcake",
+        name: "Princess Cupcake",
         icing: "chocolate",
         cake: "chocolate",
         price: "$10",
-        info: "TEST",
-        image: "images/cupcake2/png"
+        info: "TEST TWO",
+        image: "images/cupcake3.png"
       }
     ],
     curFrameId: 0,
@@ -39,8 +39,8 @@ var app = new Vue({
       icing: "strawberry",
       cake: "vanilla",
       price: "$12",
-      info: "TEST",
-      image: "images/cupcake1.png"
+      info: "TEST ONE",
+      image: "images/cupcake6.png"
     },
     fcardActive: true
   },
@@ -70,22 +70,15 @@ var app = new Vue({
     },
 
     totalData: function() {
-      document.getElementById("weightContainer").innerHTML =
-        this.currentFrame.weight + " lbs";
-      document.getElementById("speedContainer").innerHTML =
-        this.currentFrame.speed + " mph";
-      document.getElementById("aiContainer").innerHTML =
-        this.currentHead.AI + " IQ";
-      document.getElementById("shieldContainer").innerHTML =
-        this.currentFrame.shieldRating + " HP";
-      document.getElementById("rpmContainer").innerHTML =
-        this.currentArm.firepower + " rpm";
+      document.getElementById(
+        "backContainer"
+      ).innerHTML = this.currentFrame.image;
 
       var showFrame = document.createElement("img");
       showFrame.src = this.currentFrame.image;
       document.getElementById("backContainer").appendChild(showFrame);
-      showFrame.style.width = 200 + "px";
-      showFrame.style.height = 200 + "px";
+      showFrame.style.width = 690 + "px";
+      showFrame.style.height = 690 + "px";
     },
 
     fdisplayInfo: function() {
